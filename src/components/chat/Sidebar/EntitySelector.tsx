@@ -73,7 +73,7 @@ export function EntitySelector() {
   if (currentEntities.length === 0) {
     return (
       <Select disabled>
-        <SelectTrigger className="h-9 w-full rounded-xl border border-primary/15 bg-primaryAccent text-xs font-medium uppercase opacity-50">
+        <SelectTrigger className="border-border bg-background-secondary text-primaryAccent h-9 w-full rounded-xl border text-xs font-medium uppercase opacity-50">
           <SelectValue placeholder={`No ${mode}s Available`} />
         </SelectTrigger>
       </Select>
@@ -85,17 +85,17 @@ export function EntitySelector() {
       value={currentValue || ''}
       onValueChange={(value) => handleOnValueChange(value)}
     >
-      <SelectTrigger className="h-9 w-full rounded-xl border border-primary/15 bg-primaryAccent text-xs font-medium uppercase">
+      <SelectTrigger className="border-border bg-background-secondary text-primaryAccent h-9 w-full rounded-xl border text-xs font-medium uppercase">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
-      <SelectContent className="border-none bg-primaryAccent font-dmmono shadow-lg">
+      <SelectContent className="bg-background font-dmmono text-primaryAccent border-none shadow-lg">
         {currentEntities.map((entity, index) => (
           <SelectItem
             className="cursor-pointer"
             key={`${entity.id}-${index}`}
             value={entity.id}
           >
-            <div className="flex items-center gap-3 text-xs font-medium uppercase">
+            <div className="text-primaryAccent flex items-center gap-3 text-xs font-medium uppercase">
               <Icon type={'user'} size="xs" />
               {entity.name || entity.id}
             </div>

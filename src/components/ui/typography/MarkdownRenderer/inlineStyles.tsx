@@ -103,7 +103,7 @@ const DeletedText = ({ className, ...props }: DeletedTextProps) => (
 
 const HorizontalRule = ({ className, ...props }: HorizontalRuleProps) => (
   <hr
-    className={cn(className, 'mx-auto w-48 border-b border-border')}
+    className={cn(className, 'border-border mx-auto w-48 border-b')}
     {...filterProps(props)}
   />
 )
@@ -156,8 +156,10 @@ const Img = ({ src, alt }: ImgProps) => {
   return (
     <div className="w-full max-w-xl">
       {error ? (
-        <div className="flex h-40 flex-col items-center justify-center gap-2 rounded-md bg-secondary/50 text-muted">
-          <Paragraph className="text-primary">Image unavailable</Paragraph>
+          <div className="bg-background-secondary text-muted flex h-40 flex-col items-center justify-center gap-2 rounded-md">
+          <Paragraph className="text-primaryAccent">
+            Image unavailable
+          </Paragraph>
           <Link
             href={src}
             target="_blank"
